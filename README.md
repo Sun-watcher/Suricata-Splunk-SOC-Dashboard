@@ -5,7 +5,11 @@ Intégration du Suricata à Splunk pour centraliser les logs
 
 ## Suricata
 Nous allons tout d'abord générer quelques logs avec Suricata. Pour cela, nous allons faire une reconnaissance active avec nmap que Suricata détectera.
-
+La commande nmap : 
+```bash
+nmap -sV 192.168.100.10
+```
+et la règle Suricata :
 ```bash
 # Détection d’un TCP SYN Scan (Nmap -sS)
 alert tcp any any -> any any (msg:"NMAP TCP SYN"; flags:S; detection_filter:track by_src, count 20, seconds 10; classtype:attempted-recon; sid:2100001; rev:1;)
