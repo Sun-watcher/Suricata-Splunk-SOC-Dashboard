@@ -1,7 +1,14 @@
 # Suricata-Splunk-SOC-Dashboard
-Intégration du Suricata à Splunk pour centraliser les logs
+Intégration du Suricata à Splunk pour centraliser les logs, visualiser les données dans un dashboard et mettre en place une alerte.
 
 ## Introduction
+
+Ce projet démontre l’intégration de **Suricata**, un système de détection d’intrusion réseau open source, avec **Splunk Cloud** pour centraliser, visualiser et analyser les événements de sécurité.
+
+Suricata détecte automatiquement des comportements suspects sur le réseau, tels que les scans Nmap ou les tentatives d’intrusion, et génère des logs structurés au format JSON (`eve.json`). Ces logs sont ensuite ingérés dans Splunk Cloud, permettant de :
+
+- Créer des ashboards affichant les types d’attaques et les adresses IP ciblées.
+- Mettre en place des alertes pour notifier un événement.
 
 ## Suricata
 Nous allons tout d'abord générer quelques logs avec Suricata. Pour cela, nous allons faire une reconnaissance active avec nmap que Suricata détectera.
@@ -66,6 +73,17 @@ event_type=alert
 | sort - count
 ```
 ![](assets/dashboard.png)
+
+### Alert
+Il est aussi possible de créer des alertes permettant par exemple d'envoyer un mail lorsqu'un évènement configuré est déclenché. Pour cela, il faut d'abord faire une requête de ce que l'on veut surveiller, comme par exemple les namp : 
+```bash
+event_type=alert alert.signature="*Nmap*"
+```
+Il faut ensuite Save as > alert. Nous pouvons maintenant configurer l'alerte qui va envoyer un mail quand il est déclenché.
+![](assets/alert_creation1.png)
+![](assets/alert_creation2.png)
+![](assets/mail.png)
+
 
 
 
