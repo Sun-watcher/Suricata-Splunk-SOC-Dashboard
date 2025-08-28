@@ -65,7 +65,7 @@ event_type=alert
 | stats count by alert.signature src_ip dest_ip
 | sort - count
 ```
-![](assets/dasboard.png)
+![](assets/dashboard.png)
 
 
 
