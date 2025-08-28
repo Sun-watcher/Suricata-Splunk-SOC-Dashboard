@@ -34,7 +34,7 @@ Voici un exemple avec la commande nmap précédente :
 Et voici ce que l'on peut lire avec la commande suivante pour eve.json :
 
 ```bash
-jq '.alert' /var/log/suricata/eve.json
+jq '. | select(.alert.signature)' /var/log/suricata/eve.json
 ```
 ![](assets/read_evejson.png)
 
