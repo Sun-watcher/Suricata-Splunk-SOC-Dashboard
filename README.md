@@ -53,3 +53,19 @@ event_type=alert
 pour visualiser les logs que nous venons de déposer.
 ![](assets/search_log.png)
 
+### Dashboard
+Nous pouvons créer un dashboard qui nous permettra par exemple de visualiser les adresses ip qui se font le plus attaquer avec : 
+```bash
+event_type=alert | top dest_ip
+```
+Ou encore lister les attaques avec :
+
+```bash
+event_type=alert
+| stats count by alert.signature src_ip dest_ip
+| sort - count
+```
+![](assets/dasboard.png)
+
+
+
