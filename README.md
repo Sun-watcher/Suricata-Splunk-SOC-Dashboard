@@ -1,6 +1,4 @@
 # Suricata-Splunk-SOC-Dashboard
-Intégration du Suricata à Splunk pour centraliser les logs, visualiser les données dans un dashboard et mettre en place une alerte.
-
 ## Introduction
 
 Ce projet démontre l’intégration de **Suricata**, un système de détection d’intrusion réseau open source, avec **Splunk Cloud** pour centraliser, visualiser et analyser les événements de sécurité.
