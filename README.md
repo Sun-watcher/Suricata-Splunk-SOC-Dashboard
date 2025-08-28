@@ -28,6 +28,15 @@ tail -f /var/log/suricata/fast.log
 ```
 Voici un exemple avec la commande nmap précédente : 
 
-![Texte alternatif](assets/nmap_fastlog.png)
+![](assets/nmap_fastlog.png)
+
+### eve.json
+Et voici ce que l'on peut lire avec la commande suivante pour eve.json :
+
+```bash
+jq '.alert' /var/log/suricata/eve.json
+```
+![](assets/read_evejson.png)
+
 
 ## Splunk
