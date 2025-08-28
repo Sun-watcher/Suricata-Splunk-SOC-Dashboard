@@ -40,3 +40,16 @@ jq '. | select(.alert.signature)' /var/log/suricata/eve.json
 
 
 ## Splunk
+
+Nous allons maintenant intégrer les logs Suricata à Splunk, nous allons utiliser les logs eve.json car fast.log n'est pas assez structuré pour être utilisable avec Splunk. Nous devons donc envoyer ces données à Splunk et pour cela,nous allons simplement utiliser la fonctionnalité "add data".
+
+Pour commencer, naviguons vers Settings > Add data et déposons notre log.
+![](assets/add_data.png)
+
+Une fois les données intégrées à Splunk, il est maintenant possible de les visualiser en utilisant la fonctionnalité "Search & Reporting" dans App > Search & Reporting. Il faut ensuite effectuer une requête tel que : 
+```bash
+event_type=alert
+```
+pour visualiser les logs que nous venons de déposer.
+![](assets/search_log.png)
+
