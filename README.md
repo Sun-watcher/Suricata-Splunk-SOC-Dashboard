@@ -26,7 +26,8 @@ Il est possible de lire les logs avec :
 ```bash
 tail -f /var/log/suricata/fast.log
 ```
+Voici un exemple avec la commande nmap précédente : 
 
-
+![Texte alternatif](assets/nmap_fastlog.png)
 
 ## Splunk
